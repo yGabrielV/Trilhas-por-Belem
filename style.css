@@ -1,0 +1,333 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body, html {
+  height: 100%;
+  width: 100%;
+  background: #f5f5f5;
+}
+
+.app {
+  display: flex;
+  height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 320px;
+  background: #fff;
+  border-right: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  overflow-y: auto;
+  box-shadow: 2px 0 6px rgba(0,0,0,0.05);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1rem;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #0077b6, #00b4d8);
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+h1 {
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.sub {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+/* Busca */
+.search {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.search input {
+  flex: 1;
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 6px 0 0 6px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.search input:focus {
+  border-color: #0077b6;
+}
+
+.search button {
+  padding: 0.6rem 1rem;
+  border: none;
+  background: #0077b6;
+  color: #fff;
+  border-radius: 0 6px 6px 0;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+
+.search button:hover {
+  background: #0096c7;
+}
+
+/* Filtros */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.chip {
+  padding: 0.4rem 0.8rem;
+  background: #eee;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.chip:hover {
+  transform: scale(1.05);
+}
+
+.chip.active {
+  background: #0077b6;
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* Lista de POIs */
+.list {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.poi {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 0.8rem;
+  margin-bottom: 0.8rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.poi:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.poi-title {
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 0.2rem;
+}
+
+.poi-desc {
+  font-size: 0.85rem;
+  margin-bottom: 0.4rem;
+  color: #555;
+}
+
+.poi button {
+  margin-right: 5px;
+  padding: 0.35rem 0.7rem;
+  border: none;
+  background: #0077b6;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.75rem;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.poi button:hover {
+  background: #0096c7;
+  transform: translateY(-1px);
+}
+
+/* Rotas em carrossel vertical */
+.routes-carousel {
+  margin-top: 1rem;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.route-card {
+  background: #e9f5ff;
+  border: 1px solid #b3e0ff;
+  border-radius: 12px;
+  padding: 0.8rem;
+  margin-bottom: 0.6rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.route-card:hover {
+  background: #d2ecff;
+  transform: translateY(-1px);
+}
+
+.route-card strong {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+}
+
+/* Footer */
+.footer {
+  font-size: 0.8rem;
+  color: #777;
+  margin-top: auto;
+  padding-top: 0.8rem;
+  border-top: 1px solid #ddd;
+}
+
+/* Botão de localização */
+.locate-btn {
+  margin-top: 1rem;
+  padding: 0.5rem;
+  background: #009688;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: bold;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.locate-btn:hover {
+  background: #00796b;
+  transform: translateY(-1px);
+}
+
+/* Mapa */
+.map {
+  flex: 1;
+  position: relative;
+}
+
+#map {
+  height: 100%;
+  width: 100%;
+}
+
+/* Chat flutuante */
+#chat-float-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 65px;
+  height: 65px;
+  background: linear-gradient(135deg, #0077b6, #00b4d8);
+  color: #fff;
+  font-size: 36px;
+  font-weight: bold;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  z-index: 1000;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#chat-float-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+}
+
+#chat-container {
+  position: fixed;
+  bottom: 95px;
+  right: 20px;
+  width: 320px;
+  max-height: 450px;
+  background: #fff;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+  overflow: hidden;
+  z-index: 999;
+  transform: scale(0);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+#chat-container.chat-open {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.chat-box {
+  flex: 1;
+  padding: 12px;
+  overflow-y: auto;
+  background: #f4f6f8;
+}
+
+.chat-form {
+  display: flex;
+  border-top: 1px solid #ddd;
+}
+
+.chat-form input {
+  flex: 1;
+  padding: 0.6rem;
+  border: none;
+  outline: none;
+}
+
+.chat-form button {
+  padding: 0.6rem 1rem;
+  border: none;
+  background: #0077b6;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.chat-form button:hover {
+  background: #0096c7;
+}
+
+.chat-user {
+  background: #0077b6;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 12px;
+  margin-bottom: 6px;
+  max-width: 80%;
+  align-self: flex-end;
+}
+
+.chat-ai {
+  background: #e9f5ff;
+  color: #222;
+  padding: 6px 10px;
+  border-radius: 12px;
+  margin-bottom: 6px;
+  max-width: 80%;
+  align-self: flex-start;
+}

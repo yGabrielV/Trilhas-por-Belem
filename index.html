@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Descubra Belém</title>
+
+  <!-- CSS externo -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Leaflet CSS -->
+  <link 
+    rel="stylesheet" 
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" 
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" 
+    crossorigin=""
+  >
+  <link 
+    rel="stylesheet" 
+    href="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.css"
+  >
+</head>
+<body>
+  <div class="app">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <h1>Descubra Belém</h1>
+          <div class="sub">Guia de pontos turísticos</div>
+        </div>
+      </div>
+
+      <!-- Busca -->
+      <div class="search">
+        <input id="q" type="search" placeholder="Buscar ponto (ex: Ver-o-Peso)…">
+        <button id="clear">Limpar</button>
+      </div>
+
+      <!-- Filtros -->
+      <div class="filters">
+        <span class="chip active" data-filter="all">Todos</span>
+        <span class="chip" data-filter="historia">História</span>
+        <span class="chip" data-filter="cultura">Cultura</span>
+        <span class="chip" data-filter="natureza">Natureza</span>
+        <span class="chip" data-filter="gastronomia">Gastronomia</span>
+      </div>
+
+      <!-- Lista de pontos -->
+      <div class="list" id="list"></div>
+
+      <!-- Rodapé -->
+      <div class="footer">
+        Dica: ative a localização do navegador para traçar rota até um ponto.
+      </div>
+    </aside>
+
+    <!-- Mapa -->
+    <main class="map">
+      <div id="map"></div>
+    </main>
+  </div>
+
+  <!-- Botão flutuante de chat -->
+  <div id="chat-float-btn">+</div>
+
+  <!-- Chat container -->
+  <div id="chat-container">
+    <div id="chat-box" class="chat-box"></div>
+    <form id="chat-form" class="chat-form">
+      <input type="text" id="chat-input" placeholder="Digite sua dúvida..." />
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+
+  <!-- JS externo -->
+  <script 
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" 
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" 
+    crossorigin="">
+  </script>
+  <script src="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
